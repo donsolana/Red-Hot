@@ -77,7 +77,7 @@ Add data quality checks.
 ### Libraries
 
 1. `Boto3` - Python SDK for AWS
-2. `psycopg2` - Connecting with datawarhouse(Redshift uses standard database drivers)
+2. `psycopg2` - Connecting with data warehouse (Redshift uses standard database drivers)
 3. `configparser` - Handings Configuration files
 
 ### References

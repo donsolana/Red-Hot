@@ -17,13 +17,14 @@ I have broken down this stage into two sections, Namely:
 1. Defined tables with create statements in `sql_queries.py`.
 2. Set up Redshift Clusters and connect.
 3. Create tables in Redshift using `create_tables.py` to call table creation statements from `sql_queries.py`.
-4. The about process will set up 7 tables, two of which will hold untransformed data. These are named staging tables
+4. The above process will set up 7 tables, two of which will hold untransformed data. These are named staging tables
+
 
 ### 2. ELT
 
 1. The COPY statement is used to ingest data from S3 buckets into the staging tables.
-2. Then the staging tables are transformed and inserted into each of the five tables. By loading the result of bespoke queries using the `INSERT INTO` statements.
-3. As redshift is a distributed database I also declare a strategy for partioning the tables across nodes.
+2. Then the staging tables are transformed and inserted into each of the five tables by loading the result of bespoke queries using the `INSERT INTO` statements.
+3. As redshift is a distributed database I also declare a strategy for partioning(dist key) the tables across nodes and sorting(sort key) them within each node. 
 
 
 
@@ -39,7 +40,7 @@ I have broken down this stage into two sections, Namely:
 
 ### Schema
 
-Has mentioned earlier a star schema was used with five tables Redshift. Namely:
+As mentioned earlier a star schema was used with five tables Redshift. Namely:
 
 1. Fact Table
 
@@ -63,7 +64,7 @@ Has mentioned earlier a star schema was used with five tables Redshift. Namely:
 
 
 ### Dataset
-The datasets are in json data formats, stored in `AWS S3` buckets, they include
+The original(raw files) datasets are in the json data format, stored in `AWS S3` buckets, they include
 
 1. ***log data*** : event level information on individual songplays.
 

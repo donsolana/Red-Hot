@@ -4,7 +4,7 @@
 
 In this project, I created a Cloud Datawarehouse for a music streaming platform, by transforming `.json` into a Star Schema for analytical purposes. This project is built for scale and data is ingested directly from cloud storage and spread across multiple nodes. 
 
-`Json` files are used by any modern applications so this projects begins by ingesting these files containing both event data and data attributed to songs on the platform. I used an ELT workflow, where data was first extracted and loaded into Redshift before transformation. 
+`Json` files are used by any modern applications so this project begins by ingesting these files containing both event data and data attributed to songs on the platform. I used an ELT workflow, where data was first extracted and loaded into Redshift before transformation. 
 
 
 
